@@ -9,7 +9,7 @@ import BudgetContext from "./contests/BudgetContext";
 
 export function App() {
 
-  const [budgetMode, setBudgetMode] = useState(false)
+  const [budgetMode, setBudgetMode] = useState(false)     // creo uno stato booleano per indicare se la modalità budget è attiva o no
 
   function toggleMode() {
     setBudgetMode(!budgetMode)
@@ -17,7 +17,7 @@ export function App() {
 
   return (
     <>
-      <BudgetContext.Provider value={{ budgetMode, setBudgetMode, toggleMode }}>
+      <BudgetContext.Provider value={{ budgetMode, setBudgetMode, toggleMode }}>    {/* rendo i valori dentro al Context disponibili in tutte le pagine */}
 
         <BrowserRouter>
           <Routes>

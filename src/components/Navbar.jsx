@@ -22,7 +22,7 @@ const menu = [
 
 export default function Navbar() {
 
-    const { budgetMode, setBudgetMode, toggleMode } = useContext(BudgetContext)
+    const { budgetMode, setBudgetMode, toggleMode } = useContext(BudgetContext)     // recupero valore booleano / setter che cambia lo stato / al click attovo e disattivo la modalità budget
 
     return (
         <nav className="navbar d-flex align-items-center">
@@ -37,7 +37,7 @@ export default function Navbar() {
                     }
                 </ul>
 
-                <button onClick={toggleMode} className="btn">{budgetMode ? "Budget mode: active" : "Budget mode: deactive"}</button>
+                <button onClick={toggleMode} className="btn">{budgetMode ? "Budget mode: deactive" : "Budget mode: active"}</button>    {/* al click viene richiamata la funzione toggleMode per cambiare stato e in base allo stato cambia "attiva/disattiva" */}
             </div>
         </nav>
     )
