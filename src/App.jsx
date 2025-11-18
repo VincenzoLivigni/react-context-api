@@ -4,13 +4,20 @@ import Abouts from "./pagine/Abouts";
 import Products from "./pagine/Products";
 import SingleProduct from "./pagine/SingleProduct";
 
+import { useState } from "react";
 import BudgetContext from "./contests/BudgetContext";
 
 export function App() {
 
+  const [budgetMode, setBudgetMode] = useState(false)
+
+  function toggleMode() {
+    setBudgetMode(!budgetMode)
+  }
+
   return (
     <>
-      <BudgetContext.Provider value={{ saluto: "Ciao" }}>
+      <BudgetContext.Provider value={{ budgetMode, setBudgetMode, toggleMode }}>
 
         <BrowserRouter>
           <Routes>
