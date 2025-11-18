@@ -44,7 +44,8 @@ h5 {
 }
 
 button.btn,
-.btn:active {
+.btn:focus,
+:not(.btn-check)+.btn:active {
   background-color: rgb(250, 186, 108);
   color: white;
 }
