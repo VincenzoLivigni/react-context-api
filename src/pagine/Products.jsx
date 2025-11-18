@@ -4,9 +4,17 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import { useContext } from "react";
+import BudgetContext from "../contests/BudgetContext";
+
 export default function Contacts() {
+
+    const { saluto } = useContext(BudgetContext)
+    console.log(saluto);
+
     const [prodotti, setProdotti] = useState([])
     const url = "https://fakestoreapi.com/products"
+
 
     useEffect(fetchGenera, [])
 
@@ -25,6 +33,7 @@ export default function Contacts() {
 
             <main>
                 <h2 className="pt-5 pb-3 text-center">Products</h2>
+                <h1>{saluto}</h1>
                 <div className="container">
                     <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 g-4 py-5">
                         {
